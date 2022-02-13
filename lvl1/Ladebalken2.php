@@ -1,6 +1,6 @@
 <?php
 $a = (int)readline('Enter Ladestand in 10%: ');
-if ($a <= 100 && $a >= 0 && gettype($a / 10) == "integer"){
+if ($a <= 100 && $a >= 0 && $a % 10 == 0){
 for ($x = $a / 10; $x <= 10; $x++) {
     echo "[";
     $i = 1;
