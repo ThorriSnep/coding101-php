@@ -1,11 +1,11 @@
 <?php
-$a = (int)readline('Enter MAX: ');
-for ($x = 1; $x <= $a; $x++) {
-  $i = 1;
-  while ($i <= $x) {
-    echo $x; 
-    $i++;
-}
-echo "\n";
+$max = (int)readline('Enter MAX: ');
+
+for ($y = 1; $y <= $max; $y++) {
+    $x = 1;
+    while ($x <= $y) {
+        echo $y; 
+        $x++;
+    }
+    echo "\n";
 } 
-?> 

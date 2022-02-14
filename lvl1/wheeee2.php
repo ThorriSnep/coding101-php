@@ -1,21 +1,25 @@
 <?php
-$a = (int)readline('Enter MAX: ');
-for ($x = 1; $x <= $a; $x++) {
-    $i = 1;
-    while ($i <= $x) {
-        echo $x; 
-        $i++;
-        }
-        echo "\n";
-    }
+$max = (int)readline('Enter MAX: ');
 
-for ($x = $a-1; $x >= 1; $x--) {
-    $i = 1;
-    while ($i <= $x) {
-        echo $x; 
-        $i++;
-        }
+# Increment pyramide
+
+for ($y = 1; $y <= $max; $y++) {
+    $x = 1;
+    while ($x <= $y) {
+        echo $y; 
+        $x++;
+    }
+    echo "\n";
+}
+
+# Decrement pyramide
+
+for ($y = $max-1; $y >= 1; $y--) {
+    $x = 1;
+    while ($x <= $y) {
+        echo $y; 
+        $x++;
+    }
     
-echo "\n";
+    echo "\n";
 } 
-?> 

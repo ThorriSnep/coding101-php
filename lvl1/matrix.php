@@ -1,28 +1,42 @@
 <?php
-$xarr=array();
+
+# Declare empty Array
+
+$widtharr=array();
 $arr=array();
-$x = (int)readline('Enter x amount: ');
-$y = (int)readline('Enter y amount: ');
-$r = (int)readline('Enter rand amount: ');
-for ($i = 0; $i < $x; $i++) {
-    array_push($xarr,"#");
+
+# Get user inputs
+
+$width = (int)readline('Enter x amount: ');
+$hight = (int)readline('Enter y amount: ');
+$nrOfRand = (int)readline('Enter rand amount: ');
+
+# Create matrix with dimesion specified by user
+
+for ($i = 0; $i < $width; $i++) {
+    array_push($widtharr,"#");
 }
-for ($i = 0; $i < $y; $i++) {
-    array_push($arr,$xarr);
+for ($i = 0; $i < $hight; $i++) {
+    array_push($arr,$widtharr);
 }
-$a = 0;
-while ($a < $r) {
-    $i = rand(0, $y-1);
-    $j = rand(0, $x-1);
-    if ($arr[$i][$j]!="+"){
-        $arr[$i][$j]="+";
-        $a++;
+
+# Change $nrOfRand # to + at random positions
+
+$changed = 0;
+while ($changed < $nrOfRand) {
+    $j = rand(0, $hight-1);
+    $i = rand(0, $width-1);
+    if ($arr[$j][$i]!="+"){
+        $arr[$j][$i]="+";
+        $changed++;
     }
 }
-for ($i = 0; $i < count($arr); $i++) {
-    for ($j = 0; $j < count($arr[0]); $j++) {
+
+# Print generated matrix
+
+for ($i = 0; $i < $hight; $i++) {
+    for ($j = 0; $j < $width; $j++) {
         echo $arr[$i][$j];
     }
     echo "\n";
 }
-?>

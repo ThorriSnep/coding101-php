@@ -8,7 +8,7 @@ $arr = array(
     "If debugging is the process of removing software bugs, then programming must be the process of putting them in. - Edsger W. Dijkstra"
 );
 
-while (1) {
+while (true) {
     $rarr = range(0, 5);
     shuffle($rarr);
     for ($x = 0; count($rarr) > 0; $x++){
@@ -16,7 +16,6 @@ while (1) {
         echo $arr[$rarr[$x]];
         unset($rarr[$x]);
         echo "\n";
-    $a = readline('Enter: ');
+        $a = readline('Enter: ');
     }
 }
-?>

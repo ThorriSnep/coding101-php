@@ -24,12 +24,12 @@ if ($a < 18) {
     throw new AgeExeption("You aren't 18+!");
 }
 # 4.
-$c = false;
-while ($c != true) {
+$check = false;
+while ($check != true) {
     $usr = readline("\n Username: ");
     $pas = readline("\n Password: ");
     if ($usr == "test" && $pas == "1234pass"){
-        $c = true;
+        $check = true;
     }
     else {
         echo "try again";
@@ -41,4 +41,3 @@ $fname = readline("\n Enter file name: ");
 $txtf = fopen($fname, "w");
 fwrite($txtf, $text);
 fclose($txtf);
-?>

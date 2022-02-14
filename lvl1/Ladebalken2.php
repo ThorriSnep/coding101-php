@@ -1,24 +1,27 @@
 <?php
-$a = (int)readline('Enter Ladestand in 10%: ');
-if ($a <= 100 && $a >= 0 && $a % 10 == 0){
-for ($x = $a / 10; $x <= 10; $x++) {
-    echo "[";
-    $i = 1;
-    while ($i <= 10) {
-        if ($i <= $x) {
-        echo "#"; 
+
+$start = (int)readline('Enter Ladestand in 10%: ');
+
+if ($start <= 100 && $start >= 0 && $start % 10 == 0){
+    for ($stand = $start / 10; $stand <= 10; $stand++) {
+        echo "[";
+        $balkenFortschritt = 1;
+        while ($balkenFortschritt <= 10) {
+            # Ladestand
+            if ($balkenFortschritt <= $stand) {
+                echo "#"; 
+            }
+            # Noch nicht geladener Bereich
+            else {
+                echo " ";
+            }
+            $balkenFortschritt++;
         }
-        else {
-            echo " ";
-        }
-        $i++;
-        }
-    
-        echo "]". $x*10 . "%\n";
+        
+            echo "]". $stand*10 . "%\n";
     }
- 
 }
+
 else {
-    echo "\n". $a. " ist außerhalb des Bereiches [0,100] und/oder nicht ohne Rest durch 10 teilbar. \n";
+    echo "\n". $start. " ist außerhalb des Bereiches [0,100] und/oder nicht ohne Rest durch 10 teilbar. \n";
 }
-?> 
