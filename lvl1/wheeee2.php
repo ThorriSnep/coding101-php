@@ -3,23 +3,18 @@ $max = (int)readline('Enter MAX: ');
 
 # Increment pyramide
 
-for ($y = 1; $y <= $max; $y++) {
-    $x = 1;
-    while ($x <= $y) {
-        echo $y; 
-        $x++;
+for ($i = 1; $i <= $max; $i++) {    
+    for ($j = 1; $j <= $i; $j++) {
+        print $i; 
     }
-    echo "\n";
+    print "\n";
 }
 
 # Decrement pyramide
 
-for ($y = $max-1; $y >= 1; $y--) {
-    $x = 1;
-    while ($x <= $y) {
-        echo $y; 
-        $x++;
-    }
-    
-    echo "\n";
+for ($i = $max-1; $i >= 1; $i--) {  
+    for ($j = 1; $j <= $i; $j++) {
+        print $i; 
+    }   
+    print "\n";
 } 

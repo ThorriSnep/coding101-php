@@ -2,26 +2,22 @@
 
 $start = (int)readline('Enter Ladestand in 10%: ');
 
-if ($start <= 100 && $start >= 0 && $start % 10 == 0){
+if ($start <= 100 && $start >= 0 && $start % 10 == 0) {
     for ($stand = $start / 10; $stand <= 10; $stand++) {
-        echo "[";
+        print "[";
         $balkenFortschritt = 1;
         while ($balkenFortschritt <= 10) {
             # Ladestand
             if ($balkenFortschritt <= $stand) {
-                echo "#"; 
-            }
-            # Noch nicht geladener Bereich
-            else {
-                echo " ";
+                print "#"; 
+            } else {            
+                # Noch nicht geladener Bereich
+                print " ";
             }
             $balkenFortschritt++;
         }
-        
-            echo "]". $stand*10 . "%\n";
+        print "]". $stand*10 . "%\n";
     }
-}
-
-else {
-    echo "\n". $start. " ist außerhalb des Bereiches [0,100] und/oder nicht ohne Rest durch 10 teilbar. \n";
+} else { 
+    print "\n". $start. " ist außerhalb des Bereiches [0,100] und/oder nicht ohne Rest durch 10 teilbar. \n";
 }
