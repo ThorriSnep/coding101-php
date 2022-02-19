@@ -32,12 +32,12 @@ switch ($side) {
         for ($i = 0; $i < $ammount; $i++) {
             $result += $numArr[$i];
         }
-    break;
+        break;
     case 1:
         for ($i = count($numArr) - 1; $i >= count($numArr) - $ammount; $i--) {
             $result += $numArr[$i];
         }
-    break;
+        break;
     default:
         exit("Invalide input for side!\n");
 }

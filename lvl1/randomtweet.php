@@ -12,10 +12,10 @@ while ($whiteSpaceCount > 0) {
     $fileContent = str_replace("  ", " ", $fileContent, $whiteSpaceCount);
 }
 
+$fileContent = trim($fileContent);
 $wordArr = explode(" ", $fileContent);
-unset($wordArr[count($wordArr) - 1]);
 
-/* Generate Tweet with the amount of woords given by user or untill 140 chars are reached */
+/* Generate Tweet with the amount of words given by user or untill 140 chars are reached */
 
 $randArr = range(0, count($wordArr) - 1);
 shuffle($randArr);
