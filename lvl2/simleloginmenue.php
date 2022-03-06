@@ -1,17 +1,19 @@
 <?php
 
+/**
+ * This funktion prompts a user to enter his user name and pasword and chacks it in clear text
+ */
 function loginFunc($uName, $pass) {
-    /*This funktion prompts a user to enter his user name and pasword and chacks it in clear text*/
     for ($trys = 1; $trys <= 3; $trys++) {
-        $uNameIn = readline("\nUsername: ");
+        $uNameIn = readline(PHP_EOL."Username: ");
         $passIn = readline("\nPassword: ");
-        if ($uNameIn == $uName && $passIn == $pass){
-            return 0;         
+        if ($uNameIn == $uName && $passIn == $pass) {
+            return;         
         } else {
             print "Password or username wrong try $trys/3\n";
         }
     }
-    exit ("To many login attempts\n");
+    exit("To many login attempts\n");
 }
 
 loginFunc("test", "l33tH4ck3r");
