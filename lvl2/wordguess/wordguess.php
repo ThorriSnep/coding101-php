@@ -23,6 +23,7 @@ switch ($gameType) {
         $cpuPlayer1 = new CpuPlayer();
         $cpuPlayer1->getWordsLocal("LICENSE");
         $cpuPlayer1->setDificulty($setDificulty);
+        $cpuPlayer1->getDificultyWords();
         $cpuPlayer1->outputHint();
         $cpuPlayer1->inputGuess();
         break;

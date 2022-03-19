@@ -1,9 +1,10 @@
 <?php
 
-class CpuPlayer {
+require_once "BasePlayer.php";
+
+class CpuPlayer extends BasePlayer {
     public $dificulty;
     private $wordArray;
-    public $wordToGuess;
 
     /**  
      * 1) Easy (3-5)
@@ -50,8 +51,9 @@ class CpuPlayer {
         $this->wordArray = $wordArr;
     }
 
-    private function getDificultyWords($wordArr, $dificulty) {
-        switch ($dificulty) {
+    public function getDificultyWords() {
+        $wordArr = $this->wordArray;
+        switch ($this->dificulty) {
             case 1:
                 $wordMin = 3;
                 $wordMax = 5;
@@ -83,34 +85,8 @@ class CpuPlayer {
         if (count($returnArr) == 0) {
             exit("Something went wrong (no words with the specified length found)\n");
         }
-
-        return $returnArr;
+        shuffle($returnArr);
+        $this->wordToGuess = $returnArr[0];
     }
 
-    public function outputHint() {
-        $gameWords = $this->getDificultyWords($this->wordArray, $this->dificulty);
-        shuffle($gameWords);
-        $this->wordToGuess = $gameWords[0];
-        $firstLetter = $gameWords[0][0];
-        $lastLetter = $gameWords[0][strlen($gameWords[0]) - 1];
-        $lengthString = strlen($gameWords[0]);
-        print "first letter: $firstLetter, last letter:  $lastLetter, lenth string: $lengthString\n";   
-    }
-
-    public function inputGuess() {
-        $guessAmount = 0;
-        $running = true;
-        while($running) {
-            if($guessAmount == 3) {
-                exit("You reched the max ammount of guesses. Plese try again. It was: ".$this->wordToGuess."\n");
-            }
-            $userGuess = readline("Input guess: ");
-            if($userGuess == $this->wordToGuess) {
-                exit("Congrats you got it!\n");
-            } else {
-                print "Wrong!\n";
-                $guessAmount++;
-            }
-        }
-    }
 }

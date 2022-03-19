@@ -1,6 +1,9 @@
 <?php
 
 class BasePlayer {
+    
+    public $wordToGuess;
+    
     public function outputHint() {
         $wordToGuess = $this->wordToGuess ;
         $firstLetter = $wordToGuess[0];
@@ -11,7 +14,6 @@ class BasePlayer {
 
     public function inputGuess() {
         $guessAmount = 0;
-
         $running = true;
         while ($running) {
             if ($guessAmount == 3) {
